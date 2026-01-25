@@ -41,6 +41,10 @@ export class Chatbot {
             {
                 keywords: ['experience', 'work', 'job', 'teach'],
                 response: "She is currently a Teaching Professional at Santhosha Vidhyalaya Dohnavur. Previously, she worked in R&D at the Institute of Development Studies (2022-2025)."
+            },
+            {
+                keywords: ['jeya'],
+                response: "He is her lovable husband, the one who walked into her life quietly and stayed with purpose.In his presence, she found comfort, laughter, and unwavering support."
             }
         ];
 
