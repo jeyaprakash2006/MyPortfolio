@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Deepthi B V | Educator & Researcher</title>
+    <meta name="description" content="Digital Resume of Dr. Deepthi B V - Ph.D. Chemistry, Educator, and Researcher.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .timeline-line {
+            position: absolute;
+            left: 2rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #00f3ff, #bc13fe);
+        }
+
+        @media (min-width: 768px) {
+            .timeline-line {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#050505',
+                        charcoal: '#0a0a0a',
+                        neonCyan: '#00f3ff',
+                        deepPurple: '#bc13fe',
+                        neuralBlue: '#4353ff',
+                        glass: 'rgba(255, 255, 255, 0.05)',
+                        glassBorder: 'rgba(255, 255, 255, 0.1)',
+                        textDim: '#94a3b8',
+                        white: '#e2e8f0',
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Import Map for Three.js -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-obsidian text-white overflow-x-hidden antialiased selection:bg-neonCyan selection:text-obsidian">
+
+    <!-- Canvas Container -->
+    <div id="canvas-container" class="fixed inset-0 z-0 pointer-events-none opacity-50"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-md border-b border-glassBorder bg-obsidian/70"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#"
+                class="text-xl font-bold font-sans tracking-tight hover:text-neonCyan transition-colors uppercase">
+                Dr. Deepthi BV
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#experience"
+                        class="text-sm font-medium hover:text-neonCyan transition-colors font-sans">Experience</a>
+                    <a href="#education"
+                        class="text-sm font-medium hover:text-neonCyan transition-colors font-sans">Education</a>
+                    <a href="#publications"
+                        class="text-sm font-medium hover:text-neonCyan transition-colors font-sans">Publications</a>
+                    <a href="#skills"
+                        class="text-sm font-medium hover:text-neonCyan transition-colors font-sans">Skills</a>
+                    <a href="#contact"
+                        class="px-5 py-2 border border-neonCyan text-neonCyan text-xs font-bold uppercase tracking-wider hover:bg-neonCyan hover:text-obsidian transition-all duration-300 rounded-sm">
+                        Contact
+                    </a>
+                </div>
+
+                <button class="md:hidden text-white hover:text-neonCyan transition-colors">
+                    <i data-lucide="menu"></i>
+                </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-10">
+
+        <!-- Hero Section -->
+        <section id="profile" class="min-h-screen flex items-center justify-center relative pt-20 pb-20">
+            <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+
+                <!-- Atom Profile Animation -->
+                <div class="atom-container mb-12">
+                    <!-- Orbits -->
+                    <div class="atom-orbit orbit-1"><span class="electron"></span></div>
+                    <div class="atom-orbit orbit-2"><span class="electron"></span></div>
+                    <div class="atom-orbit orbit-3"><span class="electron"></span></div>
+
+                    <!-- Nucleus (Profile Image) -->
+                    <div class="atom-nucleus">
+                    </div>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-bold font-sans mb-4 tracking-tight text-white uppercase">
+                    Dr. Deepthi <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-neonCyan to-neuralBlue">B V</span>
+                </h1>
+
+                <p class="text-neutral-400 text-xl font-light mb-10 max-w-3xl mx-auto">
+                    Educator & Researcher | Passionate about Teaching & Chemical Sciences
+                </p>
+
+                <!-- Personal Details Card -->
+                <div
+                    class="glass-panel p-8 rounded-xl max-w-4xl mx-auto text-left relative overflow-hidden border border-white/10">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neonCyan via-deepPurple to-neuralBlue">
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Contact -->
+                        <div>
+                            <h4 class="text-neonCyan text-xs font-mono uppercase mb-3 flex items-center gap-2">
+                                <i data-lucide="map-pin" class="w-3 h-3"></i> Address
+                            </h4>
+                            <p class="text-sm text-neutral-300 leading-relaxed">
+                                Vandithadam, Cheruvaloor post,<br>
+                                K.K district, Pin: 629152
+                            </p>
+                        </div>
+
+                        <!-- Personal -->
+                        <div>
+                            <h4 class="text-deepPurple text-xs font-mono uppercase mb-3 flex items-center gap-2">
+                                <i data-lucide="user" class="w-3 h-3"></i> Personal
+                            </h4>
+                            <p class="text-sm text-neutral-300 mb-1"><span class="text-neutral-500">DOB:</span> 23rd
+                                August 1997</p>
+                            <p class="text-sm text-neutral-300"><span class="text-neutral-500">Languages:</span>
+                                English, Tamil, Malayalam</p>
+                        </div>
+
+                        <!-- Digital -->
+                        <div>
+                            <h4 class="text-neuralBlue text-xs font-mono uppercase mb-3 flex items-center gap-2">
+                                <i data-lucide="link" class="w-3 h-3"></i> Contact
+                            </h4>
+                            <p class="text-sm text-neutral-300 mb-1">+91 8270929419</p>
+                            <a href="mailto:deepthibv1997@gmail.com"
+                                class="text-sm text-neonCyan hover:underline">deepthibv1997@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section id="experience" class="py-20 relative">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl font-bold font-sans text-white mb-12 uppercase tracking-widest text-center">
+                    <span class="text-neonCyan">///</span> Professional Experience
+                </h2>
+
+                <div class="space-y-6">
+                    <!-- Job 1 -->
+                    <div class="neon-card glass-panel p-6 rounded-xl flex flex-col md:flex-row gap-6 items-start">
+                        <div class="w-full md:w-32 pt-1">
+                            <span class="text-neonCyan font-mono font-bold text-lg">Current</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-white mb-1">Teaching Professional</h3>
+                            <p class="text-neutral-400 mb-2"> Santhosha Vidhyalaya Dohnavur, Tirunelveli</p>
+                            <!-- <p class="text-sm text-neutral-500 italic">"Working at Santhosha Vidhyalaya Dohnavur,
+                                Tirunelveli"</p> -->
+                        </div>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="neon-card glass-panel p-6 rounded-xl flex flex-col md:flex-row gap-6 items-start">
+                        <div class="w-full md:w-32 pt-1">
+                            <span class="text-deepPurple font-mono font-bold text-lg">2022-2025</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-white mb-1">Research & Development</h3>
+                            <p class="text-neutral-400">Institute of Development Studies, Trivandrum district, Kerala
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Job 3 -->
+                    <div class="neon-card glass-panel p-6 rounded-xl flex flex-col md:flex-row gap-6 items-start">
+                        <div class="w-full md:w-32 pt-1">
+                            <span class="text-neuralBlue font-mono font-bold text-lg">2024</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-white mb-1">Educator</h3>
+                            <p class="text-neutral-400">Apollo Neet Academy Marthandam, Kanyakumari district, Tamilnadu
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20 relative bg-obsidian/50">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl font-bold font-sans text-white mb-12 uppercase tracking-widest text-center">
+                    Academic <span class="text-deepPurple">History</span>
+                </h2>
+
+                <div class="space-y-8 relative pl-8 md:pl-0">
+                    <div class="timeline-line hidden md:block"></div>
+
+                    <!-- PhD -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 group">
+                        <div class="hidden md:block w-1/2 text-right pr-8">
+                            <h3 class="text-lg font-bold text-white">Ph.D in Chemistry</h3>
+                            <p class="text-neonCyan text-sm">Manonmaniam Sundaranar University</p>
+                        </div>
+                        <div
+                            class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-obsidian border-2 border-neonCyan shadow-[0_0_10px_#00f3ff] z-10">
+                        </div>
+                        <div class="w-full md:w-1/2 md:pl-8">
+                            <span
+                                class="inline-block px-2 py-1 mb-2 text-xs font-mono text-neonCyan bg-neonCyan/10 rounded">2021
+                                - 2024</span>
+                            <div class="md:hidden">
+                                <h3 class="text-lg font-bold text-white">Ph.D in Chemistry</h3>
+                                <p class="text-neutral-400 text-sm">Manonmaniam Sundaranar University Tirunelveli.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MSc -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 group">
+                        <div class="hidden md:block w-1/2 text-right pr-8">
+                            <span
+                                class="inline-block px-2 py-1 mb-2 text-xs font-mono text-deepPurple bg-deepPurple/10 rounded">2018
+                                - 2020</span>
+                        </div>
+                        <div
+                            class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-obsidian border-2 border-deepPurple shadow-[0_0_10px_#bc13fe] z-10">
+                        </div>
+                        <div class="w-full md:w-1/2 md:pl-8">
+                            <h3 class="text-lg font-bold text-white">M.Sc in Chemistry</h3>
+                            <p class="text-neutral-400 text-sm">Nesamony Memorial Christian College Marthandam.</p>
+                            <div class="md:hidden mt-2">
+                                <span
+                                    class="inline-block px-2 py-1 text-xs font-mono text-deepPurple bg-deepPurple/10 rounded">2018
+                                    - 2020</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BSc -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 group">
+                        <div class="hidden md:block w-1/2 text-right pr-8">
+                            <h3 class="text-lg font-bold text-white">B.Sc in Chemistry</h3>
+                            <p class="text-neuralBlue text-sm">Nesamony Memorial Christian College</p>
+                        </div>
+                        <div
+                            class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-obsidian border-2 border-neuralBlue shadow-[0_0_10px_#4353ff] z-10">
+                        </div>
+                        <div class="w-full md:w-1/2 md:pl-8">
+                            <span
+                                class="inline-block px-2 py-1 mb-2 text-xs font-mono text-neuralBlue bg-neuralBlue/10 rounded">2015
+                                - 2018</span>
+                            <div class="md:hidden">
+                                <h3 class="text-lg font-bold text-white">B.Sc in Chemistry</h3>
+                                <p class="text-neutral-400 text-sm">Nesamony Memorial Christian College Marthandam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications" class="py-20 relative">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold font-sans text-white mb-2 uppercase tracking-widest">Journal
+                        Publications</h2>
+                    <p class="text-neutral-500">Published in UGC cared list journals</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Paper 1 -->
+                    <div class="neon-card glass-panel p-6 rounded-xl flex flex-col h-full">
+                        <div class="mb-4">
+                            <span
+                                class="text-xs font-bold text-neonCyan border border-neonCyan/30 px-2 py-1 rounded">2024</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-3">Amalgamation, Characterization and Biological
+                            Assay of Benzyltrimethylammonium Chloride</h3>
+                        <p class="text-xs text-neutral-400 mb-4 flex-grow">
+                            Research Journal of Chemistry and Environment, vol. 28, no. 2, pp. 76-81. ISSN: 0972-0626.
+                        </p>
+                        <p class="text-xs text-neutral-500 font-mono">Deepthi B.V & C. Isac Sobana Raj</p>
+                    </div>
+
+                    <!-- Paper 2 -->
+                    <div class="neon-card glass-panel p-6 rounded-xl flex flex-col h-full">
+                        <div class="mb-4">
+                            <span
+                                class="text-xs font-bold text-deepPurple border border-deepPurple/30 px-2 py-1 rounded">2024</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-3">Synthesis, Characterization, Antimicrobial
+                            activity... of Trimethylphenylammonium Bromide</h3>
+                        <p class="text-xs text-neutral-400 mb-4 flex-grow">
+                            Oriental Journal of Chemistry, vol. 40, no. 6, pp. 01-08. ISSN: 0970-020X.
+                        </p>
+                        <p class="text-xs text-neutral-500 font-mono">Deepthi B.V, C.Isac Sobana Raj & Seema.A</p>
+                    </div>
+
+                    <!-- Paper 3 -->
+                    <div class="neon-card glass-panel p-6 rounded-xl flex flex-col h-full">
+                        <div class="mb-4">
+                            <span
+                                class="text-xs font-bold text-neuralBlue border border-neuralBlue/30 px-2 py-1 rounded">2024</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-3">Efficiency of Benzyltrimethylammonium bromide in
+                            biological ways...</h3>
+                        <p class="text-xs text-neutral-400 mb-4 flex-grow">
+                            Acta Scientific Pharmaceutical Sciences, vol. 8, no. 11, pp. 31-39. ISSN: 2581-5423.
+                        </p>
+                        <p class="text-xs text-neutral-500 font-mono">Deepthi B.V, C. Isac Sobana Raj,</p>
+                        <p class="text-xs text-neutral-500 font-mono">Jeeffin Blessikha R, & Suba Jelin Goldy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seminar Proceedings -->
+        <section id="seminars" class="py-20 relative bg-obsidian/50">
+            <div class="max-w-5xl mx-auto px-6">
+                <h2 class="text-2xl font-bold font-sans text-white mb-8 border-l-4 border-neonCyan pl-4 uppercase">
+                    Conference Proceedings
+                </h2>
+
+                <div class="grid grid-cols-1 gap-4">
+                    <!-- 2023 -->
+                    <div
+                        class="glass-panel p-4 rounded-lg hover:bg-white/5 transition-colors border-l border-neonCyan/30">
+                        <p class="text-sm text-neutral-300">
+                            <span class="text-neonCyan font-bold">2023, April 21</span> - "Synthesis of
+                            Benzyltrimethylammonium Chloride Compound and Investigation of their Ft-IR spectrum, UV
+                            analysis, Anti-bacterial and Anti-fungal Activities", <span
+                                class="italic text-neutral-500">National Conference on Biomaterials, Scott Christian
+                                College (Autonomous), Nagercoil.</span>
+                        </p>
+                    </div>
+
+                    <div
+                        class="glass-panel p-4 rounded-lg hover:bg-white/5 transition-colors border-l border-neonCyan/30">
+                        <p class="text-sm text-neutral-300">
+                            <span class="text-neonCyan font-bold">2023, Feb 24-25</span> - "The Antimicrobial Effects
+                            and Characterization Studies of Phenyltrimethylammonium Chloride", <span
+                                class="italic text-neutral-500">International Conference on Interdisciplinary Research
+                                in Chemistry, Nesamony Memorial Christian College, Marthandam.</span>
+                        </p>
+                    </div>
+
+                    <div
+                        class="glass-panel p-4 rounded-lg hover:bg-white/5 transition-colors border-l border-neonCyan/30">
+                        <p class="text-sm text-neutral-300">
+                            <span class="text-neonCyan font-bold">2023, Feb 09-10</span> - "A Review on Formulation
+                            aspects and Antimicrobial Studies of Prepared Novel Quaternary Ammonium Compounds", <span
+                                class="italic text-neutral-500">International Conference on Multidisciplinary Aspects in
+                                Chemistry, Sri Ramakrishna College of Arts and Science, Coimbatore.</span>
+                        </p>
+                    </div>
+
+                    <div
+                        class="glass-panel p-4 rounded-lg hover:bg-white/5 transition-colors border-l border-neonCyan/30">
+                        <p class="text-sm text-neutral-300">
+                            <span class="text-neonCyan font-bold">2023, Feb 10</span> - "Antimicrobial Effects of
+                            prepared Quaternary Ammonium compound and its Characterization studies", <span
+                                class="italic text-neutral-500">National Conference on Innovative Research in Medicinal
+                                Chemistry, Muslim Arts College, Thiruvithancode.</span>
+                        </p>
+                    </div>
+
+                    <!-- 2022 -->
+                    <div
+                        class="glass-panel p-4 rounded-lg hover:bg-white/5 transition-colors border-l border-deepPurple/30">
+                        <p class="text-sm text-neutral-300">
+                            <span class="text-deepPurple font-bold">2022, Mar 24-25</span> - "The Potential of
+                            Antimicrobial Studies of an Alkyldimethylbenzylammoniumchloride against the Pandemic
+                            Situation", <span class="italic text-neutral-500">International Conference on Recent
+                                Advances in Physics, Chemistry and Mathematics, VTMNSS College, Dhanuvachapuram.</span>
+                        </p>
+                    </div>
+
+                    <div
+                        class="glass-panel p-4 rounded-lg hover:bg-white/5 transition-colors border-l border-deepPurple/30">
+                        <p class="text-sm text-neutral-300">
+                            <span class="text-deepPurple font-bold">2022, Mar 10-11</span> - "Preparation of
+                            Benzalkonium Chloride Using Alcohol-Based Hand Sanitizer With their Antimicrobial Studies",
+                            <span class="italic text-neutral-500">International Conference on Recent Advances in
+                                Chemical Sciences, Mahatma Gandhi College, Thiruvananthapuram.</span>
+                        </p>
+                    </div>
+
+                    <!-- 2021 -->
+                    <div
+                        class="glass-panel p-4 rounded-lg hover:bg-white/5 transition-colors border-l border-neuralBlue/30">
+                        <p class="text-sm text-neutral-300">
+                            <span class="text-neuralBlue font-bold">2021, Sep 01-02</span> - "The potential of
+                            Antimicrobial Studies of a Quaternary Ammonium Compound", <span
+                                class="italic text-neutral-500">National Conference on "Chemical sciences for Futuristic
+                                Advancement", Easwari Engineering College (Autonomous), Chennai.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 relative">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-2xl font-bold font-sans text-white mb-10 uppercase tracking-widest">Technical Skills
+                </h2>
+
+                <div class="flex flex-wrap justify-center gap-6">
+                    <div
+                        class="px-6 py-3 glass-panel rounded-full border border-neonCyan/30 text-neonCyan font-mono font-bold hover:bg-neonCyan/10 transition-colors">
+                        <i data-lucide="monitor" class="inline-block w-4 h-4 mr-2"></i> MS Office
+                    </div>
+                    <div
+                        class="px-6 py-3 glass-panel rounded-full border border-deepPurple/30 text-deepPurple font-mono font-bold hover:bg-deepPurple/10 transition-colors">
+                        <i data-lucide="flask-conical" class="inline-block w-4 h-4 mr-2"></i> PYRX
+                    </div>
+                    <div
+                        class="px-6 py-3 glass-panel rounded-full border border-neuralBlue/30 text-neuralBlue font-mono font-bold hover:bg-neuralBlue/10 transition-colors">
+                        <i data-lucide="atom" class="inline-block w-4 h-4 mr-2"></i> PYMOL
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 relative">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold font-sans mb-8 uppercase tracking-widest">
+                    Get in Touch
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-neonCyan to-deepPurple mx-auto mb-10"></div>
+
+                <div class="glass-panel p-8 md:p-12 rounded-xl text-left border border-white/10">
+                    <div class="flex flex-col md:flex-row justify-around items-center gap-8 md:gap-4 text-center">
+                        <div>
+                            <div
+                                class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-4 text-neonCyan">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <h4 class="text-white font-bold mb-2">College ID</h4>
+                            <p class="text-neutral-400 text-sm font-mono">RSCH215401</p>
+                        </div>
+
+                        <div>
+                            <div
+                                class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-4 text-deepPurple">
+                                <i data-lucide="phone"></i>
+                            </div>
+                            <h4 class="text-white font-bold mb-2">Phone</h4>
+                            <!-- <p class="text-neutral-400 text-sm font-mono">+91 82709 29419</p> -->
+                        </div>
+
+                        <div>
+                            <div
+                                class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-4 text-neuralBlue">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <h4 class="text-white font-bold mb-2">Email</h4>
+                            <a href="mailto:deepthibv1997@gmail.com"
+                                class="text-neutral-400 text-sm hover:text-white transition-colors font-mono">deepthibv1997@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="mt-16 text-xs text-neutral-600 font-mono">
+                    <p>© 2026 DR. DEEPTHI B V. EDUCATIOR & RESEARCHER.</p>
+                    <p class="mt-2 text-[10px]">Data sourced from Curriculum Vitae.</p>
+                </footer>
+            </div>
+        </section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script type="module" src="scripts/main.js"></script>
+        <script>
+            lucide.createIcons();
+        </script>
+</body>
+
+</html>
