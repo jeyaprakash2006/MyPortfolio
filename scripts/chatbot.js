@@ -16,9 +16,9 @@ export class Chatbot {
         this.knowledgeBase = [
 
             /* ===== GREETINGS & SMALL TALK ===== */
-            { keywords: ['hello', 'hi', 'hey', 'start'], response: "Hello 😊 I’m Dr. Deepthi B V’s AI assistant. How can I help?" },
-            { keywords: ['good morning'], response: "Good morning! Hope you’re having a great start ☀️" },
-            { keywords: ['good evening'], response: "Good evening 🌙 What would you like to know?" },
+            { keywords: ['hello', 'hi', 'hey', 'start'], response: "Hello  I’m Dr. Deepthi B V’s AI assistant. How can I help?" },
+            { keywords: ['good morning'], response: "Good morning! Hope you’re having a great start " },
+            { keywords: ['good evening'], response: "Good evening  What would you like to know?" },
             { keywords: ['how are you'], response: "I’m doing great—happy to help you today!" },
 
             /* ===== ABOUT HER ===== */
@@ -88,13 +88,13 @@ export class Chatbot {
             { keywords: ['is she strict'], response: "She balances discipline with understanding." },
 
             /* ===== CLOSING ===== */
-            { keywords: ['thanks', 'thank you'], response: "You’re welcome 😊 Happy to help!" },
-            { keywords: ['bye', 'goodbye'], response: "Thanks for visiting. Have a wonderful day 🌸" }
+            { keywords: ['thanks', 'thank you'], response: "You’re welcome  Happy to help!" },
+            { keywords: ['bye', 'goodbye'], response: "Thanks for visiting. Have a wonderful day " }
 
         ];
 
         this.defaultResponse =
-            "I’m here to help 😊 You can ask about her education, research, teaching, publications, or contact details.";
+            "I’m here to help  You can ask about her education, research, teaching, publications, or contact details.";
 
         this.init();
 
