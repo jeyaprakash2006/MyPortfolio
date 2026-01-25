@@ -14,43 +14,91 @@ export class Chatbot {
         this.voice = null;
 
         this.knowledgeBase = [
-            {
-                keywords: ['hello', 'hi', 'hey', 'start', 'greeting'],
-                response: "Hello! I am Dr. Deepthi's assistant. How can I help you today?"
-            },
-            {
-                keywords: ['who', 'about', 'profile', 'bio', 'introduction', 'intro'],
-                response: "Dr. Deepthi BV is an Educator & Researcher passionate about Teaching & Chemical Sciences. She holds a Ph.D. in Chemistry and specializes in Benzyltrimethylammonium Chloride compounds."
-            },
-            {
-                keywords: ['research', 'paper', 'publication', 'journal', 'article'],
-                response: "She has published multiple papers in UGC cared list journals, including the 'Research Journal of Chemistry and Environment' and 'Oriental Journal of Chemistry'. Her work focuses on quaternary ammonium compounds."
-            },
-            {
-                keywords: ['education', 'study', 'phd', 'degree', 'msc', 'bsc', 'college', 'university'],
-                response: "She holds a Ph.D. in Chemistry from Manonmaniam Sundaranar University (2024), an M.Sc. (2020), and a B.Sc. (2018) from Nesamony Memorial Christian College."
-            },
-            {
-                keywords: ['contact', 'email', 'phone', 'reach', 'address', 'mail'],
-                response: "You can reach her via email at deepthibv1997@gmail.com or call +91 8270929419. She is based in Kanyakumari district."
-            },
-            {
-                keywords: ['skill', 'tool', 'software', 'technology', 'tech'],
-                response: "She is proficient in MS Office, PYRX, and PYMOL, combining chemical expertise with digital tools."
-            },
-            {
-                keywords: ['experience', 'work', 'job', 'teach'],
-                response: "She is currently a Teaching Professional at Santhosha Vidhyalaya Dohnavur. Previously, she worked in R&D at the Institute of Development Studies (2022-2025)."
-            },
-            {
-                keywords: ['jeya'],
-                response: "He is her lovable husband, the one who walked into her life quietly and stayed with purpose.In his presence, she found comfort, laughter, and unwavering support."
-            }
+
+            /* ===== GREETINGS & SMALL TALK ===== */
+            { keywords: ['hello', 'hi', 'hey', 'start'], response: "Hello 😊 I’m Dr. Deepthi B V’s AI assistant. How can I help?" },
+            { keywords: ['good morning'], response: "Good morning! Hope you’re having a great start ☀️" },
+            { keywords: ['good evening'], response: "Good evening 🌙 What would you like to know?" },
+            { keywords: ['how are you'], response: "I’m doing great—happy to help you today!" },
+
+            /* ===== ABOUT HER ===== */
+            { keywords: ['who', 'about', 'profile', 'bio', 'intro'], response: "Dr. Deepthi B V is a Ph.D. Chemistry scholar, educator, and researcher." },
+            { keywords: ['what does she do'], response: "She teaches Chemistry and actively works in research." },
+            { keywords: ['profession'], response: "She is an Educator and Researcher." },
+            { keywords: ['passion', 'interest'], response: "Teaching and chemical research are her core passions." },
+
+            /* ===== EDUCATION ===== */
+            { keywords: ['education', 'qualification'], response: "She holds a Ph.D., M.Sc., and B.Sc. in Chemistry." },
+            { keywords: ['phd'], response: "She completed her Ph.D. at Manonmaniam Sundaranar University (2024)." },
+            { keywords: ['msc'], response: "She earned her M.Sc. in Chemistry in 2020." },
+            { keywords: ['bsc'], response: "She completed her B.Sc. in Chemistry in 2018." },
+            { keywords: ['college', 'university'], response: "She studied at Manonmaniam Sundaranar University and NMCC Marthandam." },
+
+            /* ===== RESEARCH ===== */
+            { keywords: ['research'], response: "Her research focuses on quaternary ammonium compounds." },
+            { keywords: ['specialization'], response: "She specializes in antimicrobial chemical compounds." },
+            { keywords: ['phd topic'], response: "Her Ph.D. work studied synthesis and biological activity of QACs." },
+            { keywords: ['benzyltrimethylammonium'], response: "It’s one of her key research compounds." },
+
+            /* ===== PUBLICATIONS ===== */
+            { keywords: ['publication', 'paper', 'journal'], response: "She has published papers in UGC CARE–listed journals." },
+            { keywords: ['how many papers'], response: "She has published three international research papers." },
+            { keywords: ['research journal'], response: "She published in Research Journal of Chemistry and Environment." },
+            { keywords: ['oriental journal'], response: "She published work in Oriental Journal of Chemistry." },
+            { keywords: ['acta scientific'], response: "She published in Acta Scientific Pharmaceutical Sciences." },
+
+            /* ===== CONFERENCES ===== */
+            { keywords: ['conference', 'seminar'], response: "She actively presents at national and international conferences." },
+            { keywords: ['presentation'], response: "She has presented multiple research papers since 2021." },
+
+            /* ===== EXPERIENCE ===== */
+            { keywords: ['experience'], response: "She has over four years of teaching and research experience." },
+            { keywords: ['current job'], response: "She currently works at Santhosha Vidhyalaya, Dohnavur." },
+            { keywords: ['previous job'], response: "She worked at IDS Kerala and Apollo NEET Academy." },
+            { keywords: ['teaching'], response: "She is known for a calm and student-friendly teaching style." },
+
+            /* ===== SKILLS ===== */
+            { keywords: ['skills'], response: "Her skills include teaching, research, and lab analysis." },
+            { keywords: ['software', 'tools'], response: "She uses MS Office, PYRX, and PYMOL." },
+            { keywords: ['pyrx'], response: "PYRX is used for molecular docking." },
+            { keywords: ['pymol'], response: "PYMOL helps visualize molecular structures." },
+
+            /* ===== PROJECTS ===== */
+            { keywords: ['project'], response: "Her projects focus on antimicrobial chemical compounds." },
+            { keywords: ['chitosan'], response: "She worked on chitosan–starch polymer blends." },
+
+            /* ===== LANGUAGES ===== */
+            { keywords: ['language', 'languages'], response: "She speaks English, Tamil, and Malayalam." },
+
+            /* ===== LOCATION ===== */
+            { keywords: ['location', 'where'], response: "She is based in Kanyakumari district, Tamil Nadu." },
+            { keywords: ['address'], response: "She resides in Kanyakumari district." },
+
+            /* ===== CONTACT ===== */
+            { keywords: ['contact', 'reach'], response: "You can contact her via email or phone." },
+            { keywords: ['email'], response: "Email: deepthibv1997@gmail.com" },
+            { keywords: ['phone', 'mobile'], response: "Phone: +91 8270929419" },
+
+            /* ===== PERSONAL ===== */
+            { keywords: ['jeya'], response: "Jeya is her lovable husband and strongest supporter." },
+
+            /* ===== STUDENT-STYLE QUESTIONS ===== */
+            { keywords: ['can she guide', 'mentor'], response: "Yes, she actively guides and motivates students." },
+            { keywords: ['is she friendly'], response: "Yes—students find her approachable and supportive." },
+            { keywords: ['is she strict'], response: "She balances discipline with understanding." },
+
+            /* ===== CLOSING ===== */
+            { keywords: ['thanks', 'thank you'], response: "You’re welcome 😊 Happy to help!" },
+            { keywords: ['bye', 'goodbye'], response: "Thanks for visiting. Have a wonderful day 🌸" }
+
         ];
 
-        this.defaultResponse = "I'm sorry, I don't have information on that. You can try asking about her 'Education', 'Research', or 'Contact' details.";
+        this.defaultResponse =
+            "I’m here to help 😊 You can ask about her education, research, teaching, publications, or contact details.";
 
         this.init();
+
+
     }
 
     init() {
