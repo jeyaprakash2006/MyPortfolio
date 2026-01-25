@@ -29,10 +29,10 @@ export class Chatbot {
 
             /* ===== EDUCATION ===== */
             { keywords: ['education', 'qualification'], response: "She holds a Ph.D., M.Sc., and B.Sc. in Chemistry." },
-            { keywords: ['phd'], response: "She completed her Ph.D. at Manonmaniam Sundaranar University (2024)." },
+            { keywords: ['phd'], response: "She completed her Ph.D. at MS University (2024)." },
             { keywords: ['msc'], response: "She earned her M.Sc. in Chemistry in 2020." },
             { keywords: ['bsc'], response: "She completed her B.Sc. in Chemistry in 2018." },
-            { keywords: ['college', 'university'], response: "She studied at Manonmaniam Sundaranar University and NMCC Marthandam." },
+            { keywords: ['college', 'university'], response: "She studied at MS University and NMCC Marthandam." },
 
             /* ===== RESEARCH ===== */
             { keywords: ['research'], response: "Her research focuses on quaternary ammonium compounds." },
