@@ -1,10 +1,14 @@
 
 // Main Application Logic
 import { SceneManager } from './three-scene.js';
+import { Chatbot } from './chatbot.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Icons
     lucide.createIcons();
+
+    // Initialize Chatbot
+    new Chatbot();
 
     // Initialize 3D Scene
     const canvasContainer = document.getElementById('canvas-container');

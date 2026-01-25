@@ -79,11 +79,29 @@ export class SceneManager {
         geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
         geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
+        // Generate a circular texture
+        const canvas = document.createElement('canvas');
+        canvas.width = 32;
+        canvas.height = 32;
+        const context = canvas.getContext('2d');
+        const center = 16;
+        const radius = 16;
+
+        context.beginPath();
+        context.arc(center, center, radius, 0, 2 * Math.PI);
+        context.fillStyle = 'white';
+        context.fill();
+
+        const texture = new THREE.CanvasTexture(canvas);
+
         const material = new THREE.PointsMaterial({
-            size: 0.08, // Slightly larger atoms
+            size: 0.15, // Increased size for better visibility with texture
             vertexColors: true,
             transparent: true,
-            opacity: 0.7,
+            opacity: 0.8,
+            map: texture,
+            alphaTest: 0.1,
+            depthWrite: false, // Helps with transparency blending
             blending: THREE.AdditiveBlending
         });
 
