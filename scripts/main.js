@@ -13,6 +13,34 @@ document.addEventListener('DOMContentLoaded', () => {
         sceneManager.animate();
     }
 
+    // Mobile Menu Toggle logic
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+
+            // Optional: Animate menu items
+            if (!mobileMenu.classList.contains('hidden')) {
+                gsap.from(mobileMenu.children, {
+                    y: -10,
+                    opacity: 0,
+                    duration: 0.3,
+                    stagger: 0.05,
+                    ease: "power2.out"
+                });
+            }
+        });
+
+        // Close menu when clicking a link
+        Array.from(mobileMenu.children).forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    }
+
     // GSAP Animations
     initAnimations();
 });
