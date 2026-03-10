@@ -77,7 +77,7 @@ export class Chatbot {
             /* ===== CONTACT ===== */
             { keywords: ['contact', 'reach'], response: "You can contact her via email or phone." },
             { keywords: ['email'], response: "Email: deepthibv1997@gmail.com" },
-            { keywords: ['phone', 'mobile'], response: "Phone: +91 8270929419" },
+            { keywords: ['phone', 'mobile'], response: "Phone: +91 9999999999" },
 
             /* ===== PERSONAL ===== */
             { keywords: ['jeya'], response: "Jeya is her lovable husband and strongest supporter." },
